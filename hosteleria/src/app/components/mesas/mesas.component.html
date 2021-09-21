@@ -1,1 +1,32 @@
-<p>mesas works!</p>
+<div class="container">
+    <h1>Listado de Mesas</h1>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <input type="text" class="form-control" name="filterMesa" placeholder="Buscar" [(ngModel)]="filterMesa">
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Número de mesa</th>
+                        <th>foto<img></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let mesa of mesas | filter:filterMesa">
+                        <td>{{mesa.id_table}} </td>
+                        <td>{{mesa.name_table}} </td>
+                        <td [src]="mesa.imagen" alt=""></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
